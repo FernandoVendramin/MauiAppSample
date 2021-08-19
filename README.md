@@ -1,0 +1,2 @@
+# MauiAppSample
+.NET Maui application
