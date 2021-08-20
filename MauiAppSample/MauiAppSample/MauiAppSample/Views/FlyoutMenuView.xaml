@@ -1,0 +1,114 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:MauiApp1.Views"
+             xmlns:models="clr-namespace:MauiAppSample.Models"
+             x:Class="MauiApp1.Views.FlyoutMenuView"
+             Title="Flayout Menu" 
+             Padding="0,40,0,0"
+             IconImageSource="hamburger.png"
+             BackgroundColor="{StaticResource PageBackgroundDarkColor}">
+    <StackLayout>
+        <Grid BackgroundColor="Black" Opacity="0.7">
+            <Image Aspect="AspectFill" 
+                   Source="dotnet_bot.svg" 
+                   HeightRequest="100"
+                   Opacity="0.6"/>
+            <Label Text=".NET Maui" 
+                   Margin="10, 0"
+                   TextColor="White" 
+                   FontSize="Title"
+                   FontAttributes="Bold" 
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+        </Grid>
+        <Grid Padding="15, 10">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding NavigateCommand}" CommandParameter="{x:Type views:HomeView}"/>
+            </Grid.GestureRecognizers>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="home.svg" BackgroundColor="Transparent" WidthRequest="22"/>
+            <Label Grid.Column="1" 
+                   Margin="0"
+                   Text="Home" 
+                   TextColor="White"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"
+                   VerticalOptions="CenterAndExpand"/>
+        </Grid>
+        <Grid Padding="15, 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="tasks.svg" BackgroundColor="Transparent" WidthRequest="22"/>
+            <Label Grid.Column="1" 
+                   Margin="0"
+                   Text="Listagem" 
+                   TextColor="White"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"
+                   VerticalOptions="CenterAndExpand"/>
+        </Grid>
+        <Grid Padding="15, 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="pencil.svg" BackgroundColor="Transparent" WidthRequest="22"/>
+            <Label Grid.Column="1" 
+                   Margin="0"
+                   Text="Cadastro" 
+                   TextColor="White"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"
+                   VerticalOptions="CenterAndExpand"/>
+        </Grid>
+
+        <!--<ListView x:Name="listView" x:FieldModifier="public" ItemsSource="{Binding Pages}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}" />
+                            <Label Grid.Column="1" Text="{Binding Title}" TextColor="White"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+        <!--<ListView x:Name="listView" x:FieldModifier="public">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type models:FlyoutPageItem}">
+                    <models:FlyoutPageItem Title="Home" IconSource="home.png" TargetType="{x:Type views:HomeView}" />
+                    --><!--<local:FlyoutPageItem Title="TodoList" IconSource="todo.png" TargetType="{x:Type local:TodoListPage}" />
+                    <local:FlyoutPageItem Title="Reminders" IconSource="reminders.png" TargetType="{x:Type local:ReminderPage}" />--><!--
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}" />
+                            <Label Grid.Column="1" Text="{Binding Title}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+    </StackLayout>
+</ContentPage>
