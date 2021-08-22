@@ -7,57 +7,36 @@ using MauiAppSample.ViewModels.Base;
 using Microsoft.Maui.Controls;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using MauiAppSample.Services.Interfaces;
 
 namespace MauiAppSample.ViewModels
 {
     public class FlyoutMenuViewModel : ViewModelBase
     {
-        private readonly INavigation _navigation;
-
-        public FlyoutMenuViewModel(INavigation navigation)
+        public FlyoutMenuViewModel(INavigationService navigationService)
+            : base(navigationService)
         {
-            _navigation = navigation;
-            LoadData();
             NavigateCommand = new Command<Type>(async (Type type) => await NavigateAsync(type));
         }
 
         public ICommand NavigateCommand { get; set; }
 
-        private ObservableCollection<FlyoutPageItem> pages = new ObservableCollection<FlyoutPageItem>();
-        public ObservableCollection<FlyoutPageItem> Pages
-        {
-            get
-            {
-                return pages;
-            }
-            set
-            {
-                pages = value;
-                OnPropertyChanged(nameof(Pages));
-            }
-        }
-
-        private void LoadData()
-        {
-            var pages = new List<FlyoutPageItem>()
-            {
-                new ("Menu", "home.png", typeof(HomeView))
-            };
-
-            Pages = new ObservableCollection<FlyoutPageItem>(pages);
-        }
-
         private async Task NavigateAsync(Type type)
         {
-            if (nameof(type) == nameof(HomeView))
+            if (type == typeof(HomeView))
             {
-                await _navigation.PushAsync(new HomeView());
+                await NavigationService.NavigateToAsync<HomeViewModel>();
             }
 
-            //if (nameof(type) == nameof())
-            //{
-            //    await _navigation.PushAsync(new HomeView());
-            //}
+            if (type == typeof(CoursesListView))
+            {
+                await NavigationService.NavigateToAsync<CoursesListViewModel>();
+            }
+
+            if (type == typeof(RegisterView))
+            {
+                await NavigationService.NavigateToAsync<RegisterViewModel>();
+            }
         }
     }
 }

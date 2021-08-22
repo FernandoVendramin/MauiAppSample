@@ -1,16 +1,5 @@
 <FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             x:Class="MauiAppSample.MainPage"
-            xmlns:views="clr-namespace:MauiApp1.Views"
             BackgroundColor="{DynamicResource PageBackgroundColor}">
-    <FlyoutPage.Flyout>
-        <views:FlyoutMenuView x:Name="flyoutPage" />
-    </FlyoutPage.Flyout>
-    <FlyoutPage.Detail>
-        <NavigationPage>
-            <x:Arguments>
-                <views:HomeView />
-            </x:Arguments>
-        </NavigationPage>
-    </FlyoutPage.Detail>
 </FlyoutPage>

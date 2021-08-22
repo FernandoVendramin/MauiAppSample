@@ -1,6 +1,13 @@
-﻿namespace MauiAppSample.ViewModels
+﻿using MauiAppSample.Services.Interfaces;
+using MauiAppSample.ViewModels.Base;
+
+namespace MauiAppSample.ViewModels
 {
-    public class HomeViewModel
+    public class HomeViewModel : ViewModelBase
     {
+        public HomeViewModel(INavigationService navigationService)
+            : base(navigationService)
+        {
+        }
     }
 }

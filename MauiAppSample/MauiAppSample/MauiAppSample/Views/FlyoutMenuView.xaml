@@ -41,6 +41,9 @@
                    VerticalOptions="CenterAndExpand"/>
         </Grid>
         <Grid Padding="15, 10">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding NavigateCommand}" CommandParameter="{x:Type views:CoursesListView}"/>
+            </Grid.GestureRecognizers>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="30"/>
                 <ColumnDefinition Width="*" />
@@ -56,6 +59,9 @@
                    VerticalOptions="CenterAndExpand"/>
         </Grid>
         <Grid Padding="15, 10">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding NavigateCommand}" CommandParameter="{x:Type views:RegisterView}"/>
+            </Grid.GestureRecognizers>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="30"/>
                 <ColumnDefinition Width="*" />
@@ -70,45 +76,5 @@
                    VerticalTextAlignment="Center"
                    VerticalOptions="CenterAndExpand"/>
         </Grid>
-
-        <!--<ListView x:Name="listView" x:FieldModifier="public" ItemsSource="{Binding Pages}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid Padding="5,10">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="30"/>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Image Source="{Binding IconSource}" />
-                            <Label Grid.Column="1" Text="{Binding Title}" TextColor="White"/>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
-        <!--<ListView x:Name="listView" x:FieldModifier="public">
-            <ListView.ItemsSource>
-                <x:Array Type="{x:Type models:FlyoutPageItem}">
-                    <models:FlyoutPageItem Title="Home" IconSource="home.png" TargetType="{x:Type views:HomeView}" />
-                    --><!--<local:FlyoutPageItem Title="TodoList" IconSource="todo.png" TargetType="{x:Type local:TodoListPage}" />
-                    <local:FlyoutPageItem Title="Reminders" IconSource="reminders.png" TargetType="{x:Type local:ReminderPage}" />--><!--
-                </x:Array>
-            </ListView.ItemsSource>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid Padding="5,10">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="30"/>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Image Source="{Binding IconSource}" />
-                            <Label Grid.Column="1" Text="{Binding Title}" />
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
     </StackLayout>
 </ContentPage>

@@ -8,7 +8,6 @@ namespace MauiApp1.Views
         public HomeView()
         {
             InitializeComponent();
-            BindingContext = new HomeViewModel();
         }
     }
 }

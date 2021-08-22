@@ -11,6 +11,7 @@
             <Color x:Key="PageBackgroundDarkColor">#2B0B98</Color>
             <Color x:Key="AccentColor">#AED42B</Color>
             <Color x:Key="PrimaryTextColor">White</Color>
+            <Color x:Key="PlaceholderColor">#c1c1c1</Color>
             
 
             <Style TargetType="Label">
@@ -23,6 +24,17 @@
                 <Setter Property="FontFamily" Value="OpenSansRegular" />
                 <Setter Property="BackgroundColor" Value="#2b0b98" />
                 <Setter Property="Padding" Value="14,10" />
+            </Style>
+
+            <Style TargetType="FlyoutPage">
+                <Setter Property="NavigationPage.HasNavigationBar" Value="False"/>
+                <Setter Property="NavigationPage.BarBackgroundColor" Value="{StaticResource PageBackgroundDarkColor}"/>
+            </Style>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource PageBackgroundDarkColor}"/>
+                <!--<Setter Property="IsVisible" Value="False"/>-->
+                <Setter Property="BarTextColor" Value="{StaticResource PrimaryTextColor}"/>
             </Style>
 
         </ResourceDictionary>

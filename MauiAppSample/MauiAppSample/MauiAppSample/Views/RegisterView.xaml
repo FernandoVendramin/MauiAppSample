@@ -1,0 +1,84 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Views.RegisterView"
+             Title="Cadastro"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+    <ContentPage.Content Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
+        <StackLayout Margin="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="Cadastrar novo Curso" FontSize="Title" TextColor="White"/>
+
+            <Frame Margin="0, 10"
+                   BackgroundColor="White" 
+                   CornerRadius="5" 
+                   Padding="10" 
+                   VerticalOptions="FillAndExpand" 
+                   HorizontalOptions="FillAndExpand">
+
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Label Text="Título" FontSize="Small" TextColor="Black"/>
+                    <Entry HorizontalOptions="FillAndExpand" 
+                           BackgroundColor="{OnPlatform UWP='White'}"/>
+
+                    <Label Text="Descrição" FontSize="Small" TextColor="Black" Margin="0, 10, 0, 0"/>
+                    <Editor BackgroundColor="{OnPlatform UWP='White'}"
+                            HorizontalOptions="FillAndExpand"
+                            AutoSize="TextChanges"/>
+
+                    <Label Text="Curso Online?" FontSize="Small" TextColor="Black" Margin="0, 10, 0, 0"/>
+                    <Switch IsToggled="False" 
+                            OnColor="{StaticResource AccentColor}"
+                            ThumbColor="{StaticResource PageBackgroundColor}"
+                            HorizontalOptions="Start"/>
+
+                    <Label Text="Materiais fornecidos:" FontSize="Small" TextColor="Black" Margin="0, 10, 0, 0"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <CheckBox Color="{StaticResource PageBackgroundDarkColor}" 
+                                  HorizontalOptions="Start"
+                                  VerticalOptions="Start"/>
+                        <Label Text="Apostila" 
+                               Margin="{OnPlatform Android='0, 10, 0, 0', Default='0'}"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Start"
+                               FontSize="Small" 
+                               TextColor="Black"/>
+
+                        <CheckBox Color="{StaticResource PageBackgroundDarkColor}" 
+                                  Margin="{OnPlatform Android='5, 0, 0, 0', Default='15, 0, 0, 0'}"
+                                  HorizontalOptions="Start"
+                                  VerticalOptions="Start"/>
+                        <Label Text="Livros" 
+                               Margin="{OnPlatform Android='0, 10, 0, 0', Default='0'}"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Start"
+                               FontSize="Small" 
+                               TextColor="Black"/>
+
+                        <CheckBox Color="{StaticResource PageBackgroundDarkColor}" 
+                                  Margin="{OnPlatform Android='5, 0, 0, 0', Default='15, 0, 0, 0'}"
+                                  HorizontalOptions="Start"
+                                  VerticalOptions="Start"/>
+                        <Label Text="Crédito Azure" 
+                               Margin="{OnPlatform Android='0, 10, 0, 0', Default='0'}"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Start"
+                               FontSize="Small" 
+                               TextColor="Black"/>
+                    </StackLayout>
+
+                    <Label Text="Inscrições abertas até" FontSize="Small" TextColor="Black" Margin="0, 10, 0, 0"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start">
+                        <DatePicker HorizontalOptions="Start" TextColor="Black"/>
+                        <TimePicker HorizontalOptions="Start" TextColor="Black" Margin="10,0"/>
+                    </StackLayout>
+
+                    <Button Text="Salvar" 
+                            ImageSource="save.svg"
+                            ContentLayout="Left,5"
+                            Margin="0, 15"
+                            BackgroundColor="{StaticResource PageBackgroundDarkColor}" 
+                            HorizontalOptions="Start"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
