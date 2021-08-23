@@ -33,7 +33,6 @@
 
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource PageBackgroundDarkColor}"/>
-                <!--<Setter Property="IsVisible" Value="False"/>-->
                 <Setter Property="BarTextColor" Value="{StaticResource PrimaryTextColor}"/>
             </Style>
 

@@ -5,7 +5,7 @@
              BackgroundColor="{StaticResource PageBackgroundColor}">
     <ContentPage.Content Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
         <StackLayout Margin="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Label Text="Cadastrar novo Curso" FontSize="Title" TextColor="White"/>
+            <Label Text="Novo Curso" FontSize="Title" TextColor="White"/>
 
             <Frame Margin="0, 10"
                    BackgroundColor="White" 
@@ -70,6 +70,17 @@
                         <DatePicker HorizontalOptions="Start" TextColor="Black"/>
                         <TimePicker HorizontalOptions="Start" TextColor="Black" Margin="10,0"/>
                     </StackLayout>
+
+                    <Label Text="Tipo" FontSize="Small" TextColor="Black" Margin="0, 10, 0, 0"/>
+                    <Picker HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>Curso do tipo A</x:String>
+                            <x:String>Curso do tipo B</x:String>
+                            <x:String>Curso do tipo C</x:String>
+                            <x:String>Curso do tipo D</x:String>
+                            <x:String>Curso do tipo E</x:String>
+                        </Picker.Items>
+                    </Picker>
 
                     <Button Text="Salvar" 
                             ImageSource="save.svg"
